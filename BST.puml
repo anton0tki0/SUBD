@@ -1,0 +1,45 @@
+@startuml
+
+class Node{
+-{field}T data
+-{field}Node<T>* left
+-{field}Node<T>* right
+-{field}Node<T>* parent
++{method}Node(T data)
++{method}~Node()
++{method}T getData()
++{method}Node<T>* getLeft()
++{method}Node<T>* getRight()
++{method}data(Node<T>* other)
++{method}operator<<
++{method}operator<
++{method}operator>
++{method}operator==
++{method}operator!=
+}
+
+class BST{
+-{field}Node<T>* root
+-{method}Node<T>* inserter(Node<T>* node, Node<T>* current, Node<T>* parent)
+-{method}bool contains(Node<T> *node, Node<T> *current)
+-{method}Node<T>* findMin(Node<T>* node)
+-{method}Node<T>* findMax(Node<T>* node)
+-{method}string inOrderTraversal(Node<T>* node, ostringstream& out)
+-{method}string postOrderTraversal(Node<T>* node, ostringstream& out)
+-{method}Node<T>* subtreeToLeaf(Node<T>* current)
+-{method}void nodeRemover(Node<T>* node, Node<T>* current)
+-{method}void treeRemover(Node<T>* node)
++{method}BST()
++{method}Node<T>* getRoot()
++{method}Node<T>* getMin()
++{method}Node<T>* getMax()
++{method}void insertNode(const T& newData)
++{method}bool isContains (T dataToFind)
++{method}string inOrderPrint()
++{method}string postOrderPrint()
++{method}void deleteNode(const T& data)
++{method}~BST()
+}
+
+BST *-- Node
+@enduml
